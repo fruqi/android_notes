@@ -411,9 +411,6 @@ the system level
   * `IntentService` class is available in case you need to create service with its own thread
 
   *  Services have their own context, so there is no need to set or pass in a context to YourService. Instead, just use **this**
-
-  * 
-
   
 
 # Alarm
