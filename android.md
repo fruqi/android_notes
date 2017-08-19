@@ -410,8 +410,22 @@ the system level
 
   * `IntentService` class is available in case you need to create service with its own thread
 
-  *  Services have their own context, so there is no need to set or pass in a context to YourService. Instead, just use **this**
+  * Services have their own context, so there is no need to set or pass in a context to YourService. Instead, just use **this**
+ 
+  * There are three (3) types of **Service**:
+    1. Start Service
+    2. Scheduled Service
+    3. Bound Service
   
+  * Service starts their life in main application thread (UI Thread)
+  
+  * Service has its own lifecycle
+
+  * You need to use background process (like AsyncTask or thread) in service
+    `onStartService` lifecycle
+
+  * Android has build-in class  that runs a Service in a separate thread,
+    namely ``IntentService``
 
 # Alarm
  
@@ -477,3 +491,16 @@ the system level
     4. Receiver
 
   * Android's components have their own context, you can get it by calling ``getContext()``
+
+
+# ADB Utilities
+
+* To simulate charging the device
+  ```
+  adb shell dumpsys battery reset
+  ```
+
+* To simulate discharging the device 
+  ```
+  adb shell dumpsys battery unplug
+  ```
